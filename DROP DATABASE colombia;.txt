@@ -1,0 +1,19 @@
+DROP DATABASE colombia;
+CREATE DATABASE colombia;
+USE colombia;
+
+CREATE TABLE departamentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE ciudades (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    id_departamento INT,
+    FOREIGN KEY (id_departamento) REFERENCES departamentos(id) ON DELETE CASCADE
+);
+
+SELECT * FROM departamentos;
+SELECT * FROM ciudades;
+
